@@ -5,40 +5,40 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-400 p-6 border-t border-slate-800">
+    <footer className="bg-gray-950 text-gray-400 p-6 border-t border-gray-800">
       <div className="flex flex-wrap justify-center items-center gap-4 text-2xl mb-6">
         <Link
           to="https://www.linkedin.com/in/sonu-munda-b8806b21a/"
           target="_blank"
-          className="hover:text-white transition duration-300"
+          className="hover:text-blue-500 transition duration-300"
         >
           <BsLinkedin />
         </Link>
-        <span className="text-slate-600">/</span>
+        <span className="text-gray-600">/</span>
         <Link
           to="https://www.facebook.com/sonu.m.75685/"
           target="_blank"
-          className="hover:text-white transition duration-300"
+          className="hover:text-blue-700 transition duration-300"
         >
           <FaFacebook />
         </Link>
-        <span className="text-slate-600">/</span>
+        <span className="text-gray-600">/</span>
         <Link
           to="https://instagram.com/sonumunda_"
           target="_blank"
-          className="hover:text-white transition duration-300"
+          className="hover:text-purple-400 transition duration-300"
         >
           <FaInstagram />
         </Link>
-        <span className="text-slate-600">/</span>
+        <span className="text-gray-600">/</span>
         <Link
           to="MailTo: sonumunda1312@gmail.com"
           target="_blank"
-          className="hover:text-white transition duration-300"
+          className="hover:text-red-500 transition duration-300"
         >
           <SiGmail />
         </Link>
-        <span className="text-slate-600">/</span>
+        <span className="text-gray-600">/</span>
         <Link
           to="https://github.com/sonumunda"
           target="_blank"
@@ -58,7 +58,7 @@ const Footer = () => {
         <Link to="/" className="hover:text-white transition duration-300">
           Home
         </Link>
-        <span className="font-medium text-slate-600">|</span>
+        <span className="font-medium text-gray-600">|</span>
         <Link to="/resume" className="hover:text-white transition duration-300">
           Resume
         </Link>
@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-6 text-center">
-        <p className="text-slate-500 text-sm">
+        <p className="text-gray-500 text-sm">
           © {new Date().getFullYear()} Sonu Munda. Built with ❤️ by me.
         </p>
       </div>

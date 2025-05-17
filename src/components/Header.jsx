@@ -1,43 +1,116 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/images/logo.png";
-
+import { useEffect, useState } from "react";
+// import logo from "../assets/images/logo.png";
+import {
+  LuBriefcase,
+  LuFileText,
+  LuHome,
+  LuMenu,
+  LuUser2,
+  LuX,
+} from "react-icons/lu";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [fixedHeader, setFixedHeader] = useState(false);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setFixedHeader(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-slate-950 border-b border-slate-800 py-2 px-4 flex items-center md:justify-around justify-between fixed w-full z-10">
-      <img
-        src={logo}
-        alt="Sonu Munda"
-        className="logo h-10  rounded mx-2 sm:block md:hidden"
-      />
-      <h1 className="logo text-xl font-semibold py-2 flex gap-1 uppercase block hidden md:block">
-        <span className="text-white">Sonu</span>
-        <span className="text-cyan-300">Munda</span>
-      </h1>
-      <nav className="navbar">
-        <ul className="nav-list flex gap-4 text-white">
-          <li className="list-item">
-            <NavLink to={"/"} className="nav-link md:p-2 p-0">
-              Home
-            </NavLink>
-          </li>
-          <li className="list-item">
-            <NavLink to={"/about"} className="nav-link md:p-2 p-0">
-              About
-            </NavLink>
-          </li>
-          <li className="list-item">
-            <NavLink to={"/resume"} className="nav-link md:p-2 p-0">
-              Resume
-            </NavLink>
-          </li>
-          <li className="list-item">
-            <NavLink to={"/work"} className="nav-link md:p-2 p-0">
-              Work
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+    <header
+      className={`transition-all duration-300 ease-in-out ${
+        fixedHeader
+          ? "fixed top-0 shadow-md backdrop-blur bg-gray-950/80"
+          : "relative bg-gray-950"
+      } border-b border-gray-800 w-full z-20`}
+    >
+      <div className="flex items-center justify-between px-4 py-3 md:px-8">
+        <div className="flex items-center gap-2">
+          {/* <img src={logo} alt="Sonu Munda" className="h-10 rounded" /> */}
+          <h1 className="text-xl font-bold uppercase text-white flex gap-1  px-3 py-2">
+            <span className="text-gray-200">Sonu</span>
+            <span className="text-sky-400">Munda</span>
+          </h1>
+        </div>
+
+        <button
+          className="text-white md:hidden focus:outline-none"
+          onClick={toggleMenu}
+        >
+          {menuOpen ? <LuX size={24} /> : <LuMenu size={24} />}
+        </button>
+
+        {/* Navigation */}
+        <nav
+          className={`md:flex md:items-center md:gap-6 font-medium text-white absolute md:static top-full left-0 w-full md:w-auto bg-gray-900 md:bg-transparent transition-all duration-500 ease-in-out ${
+            menuOpen
+              ? "opacity-100 max-h-[500px]"
+              : "opacity-0 max-h-0 overflow-hidden md:opacity-100 md:max-h-none"
+          }`}
+        >
+          <ul className="flex flex-col md:flex-row gap-4 md:gap-6 px-4 md:px-0 py-4 md:py-0">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 py-2 px-3 rounded-full hover:text-sky-300 transition ${
+                    isActive ? "text-sky-400 bg-gray-800" : "text-white"
+                  }`
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                <LuHome size={20} /> Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 py-2 px-3 rounded-full hover:text-sky-300 transition ${
+                    isActive ? "text-sky-400 bg-gray-800" : "text-white"
+                  }`
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                <LuUser2 size={20} /> About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/resume"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 py-2 px-3 rounded-full hover:text-sky-300 transition ${
+                    isActive ? "text-sky-400 bg-gray-800" : "text-white"
+                  }`
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                <LuFileText size={20} /> Resume
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/work"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 py-2 px-3 rounded-full hover:text-sky-300 transition ${
+                    isActive ? "text-sky-400 bg-gray-800" : "text-white"
+                  }`
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                <LuBriefcase size={20} /> Work
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

@@ -11,19 +11,19 @@ const Resume = () => {
   };
 
   return (
-    <section className="resume flex items-center justify-center bg-slate-900">
-      <div className="container max-w-6xl p-4 flex flex-col gap-8 my-10 ">
+    <section className="resume flex items-center justify-center bg-gray-950">
+      <div className="container max-w-6xl p-4 flex flex-col gap-8">
         <motion.h2
-          className="text-4xl font-bold text-blue-400 text-center uppercase py-4 mt-2"
+          className="text-4xl font-bold text-sky-500 text-center py-4 mt-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Resume
+          <span className="bg-gray-950 py-2 px-10 rounded-full">Resume</span>
         </motion.h2>
         <motion.div className="education">
           <motion.h2
-            className="text-3xl font-bold text-cyan-500 py-4 mt-2 border-b border-slate-800"
+            className="text-3xl font-bold text-sky-500 py-4 mt-2 "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -34,7 +34,7 @@ const Resume = () => {
             {education.map((edu) => (
               <motion.div
                 key={edu.id}
-                className="education-item col px-6 py-10 flex flex-col bg-slate-950 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="education-item col px-6 py-10 flex flex-col bg-gray-900 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false }}
@@ -56,10 +56,10 @@ const Resume = () => {
                       {edu.title}
                     </h3>
                   </div>
-                  <p className="text-slate-400 mb-1">
+                  <p className="text-gray-400 mb-1">
                     <strong>Location:</strong> {edu.location}
                   </p>
-                  <p className="text-slate-400">
+                  <p className="text-gray-400">
                     <strong>Duration:</strong> {edu.duration}
                   </p>
                 </div>
@@ -70,7 +70,7 @@ const Resume = () => {
 
         <div className="experience">
           <motion.h2
-            className="text-3xl font-bold text-cyan-500 py-4 mt-2 border-b border-slate-800"
+            className="text-3xl font-bold text-sky-500 py-4 mt-2 "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -81,7 +81,7 @@ const Resume = () => {
             {experiences.map((exp) => (
               <motion.div
                 key={exp.id}
-                className="experience-item col p-6 flex flex-col gap-2 bg-slate-950"
+                className="experience-item col p-6 flex flex-col gap-2 bg-gray-900 rounded-lg"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false }}
@@ -95,8 +95,8 @@ const Resume = () => {
                 variants={fadeInUp}
               >
                 <h3 className="text-xl text-blue-400"> - {exp.title}</h3>
-                <p className="text-slate-400">{exp.duration}</p>
-                <p className="text-slate-400">{exp.description}</p>
+                <p className="text-gray-400">{exp.duration}</p>
+                <p className="text-gray-400">{exp.description}</p>
               </motion.div>
             ))}
           </div>
@@ -104,7 +104,7 @@ const Resume = () => {
 
         <div className="workingSkills">
           <motion.h2
-            className="text-3xl font-bold text-cyan-500 py-4 mt-2 border-b border-slate-800"
+            className="text-3xl font-bold text-sky-500 py-4 mt-2 "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -119,9 +119,9 @@ const Resume = () => {
                   <h3 className={`text-xl mb-2 flex ${skill.textColor}`}>
                     {skill.name}
                   </h3>
-                  <p className="text-slate-400">{skill.percentage}%</p>
+                  <p className="text-gray-400">{skill.percentage}%</p>
                 </div>
-                <div className="relative w-full h-2 bg-slate-800 overflow-hidden">
+                <div className="relative w-full h-2 bg-gray-900 overflow-hidden rounded-lg">
                   <motion.div
                     className={`progress h-full ${skill.progressColor}`}
                     style={{
@@ -139,7 +139,7 @@ const Resume = () => {
 
         <div className="tech-stack">
           <motion.h2
-            className="text-3xl font-bold text-cyan-500 py-4 mt-2 border-b border-slate-800"
+            className="text-3xl font-bold text-sky-500 py-4 mt-2 "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -150,7 +150,7 @@ const Resume = () => {
             {techStack.map((stack) => (
               <motion.div
                 key={stack.id}
-                className="stack flex flex-col items-center p-4 bg-slate-950  text-center border border-slate-800"
+                className="stack flex flex-col items-center p-4 bg-gray-900  text-center border border-gray-800 rounded-lg"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false }}
@@ -159,7 +159,7 @@ const Resume = () => {
                 <div className={`icon text-4xl ${stack.color} mb-3`}>
                   <stack.icon />
                 </div>
-                <p className="text-slate-400 text-sm sm:text-lg font-medium">
+                <p className="text-gray-400 text-sm sm:text-lg font-medium">
                   {stack.name}
                 </p>
               </motion.div>

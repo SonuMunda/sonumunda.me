@@ -9,21 +9,21 @@ const Projects = () => {
   };
 
   return (
-    <section className="projects bg-slate-950 flex justify-center">
-      <div className="container max-w-6xl my-10 p-4">
+    <section className="projects bg-gray-950 flex justify-center">
+      <div className="container max-w-6xl p-4">
         <motion.h2
-          className="text-4xl font-bold text-blue-400 text-center uppercase py-4 mt-2 border-b border-slate-800"
+          className="text-4xl font-bold text-blue-400 text-center py-4 mt-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          My Work
+          Projects
         </motion.h2>
         <div className="project-cards my-2 grid lg:grid-cols-3 gap-4">
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="project-card px-4 py-6  bg-slate-900 border border-slate-800"
+              className="project-card px-4 py-6 bg-gray-900 border border-gray-800 rounded-lg"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
@@ -37,7 +37,7 @@ const Projects = () => {
                 />
                 <h3 className="text-xl text-cyan-500">{project.title}</h3>
               </div>
-              <p className="text-slate-400 mb-3">{project.description}</p>
+              <p className="text-gray-400 mb-3">{project.description}</p>
               <div className="link flex items-center gap-2">
                 <Link
                   to={project.link}
