@@ -50,7 +50,7 @@ const HeroSection = () => {
             >
               <Link
                 to={
-                  "https://drive.google.com/file/d/17heNKu2i9V5-O5nzQ4aVltNPrDZ75Til/view?usp=drivesdk"
+                  "https://drive.google.com/file/d/1rgsOpj6De1nViBmZs-Ho0knjqd8gI9MQ/view?usp=sharing"
                 }
                 target="_blank"
                 className="bg-sky-400 text-gray-900 px-6 py-3 text-xl font-semibold rounded-full hover:bg-sky-500 transition duration-300"
