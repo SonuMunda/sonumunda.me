@@ -5,7 +5,7 @@ const education = [
     id: 1,
     title: "Master of Computer Applications",
     location: "Chadigarh University, Mohali",
-    duration: "2023 - current",
+    duration: "2023 - 2025",
     icon: FaUniversity,
   },
   {

@@ -1,22 +1,32 @@
-import About from "./components/About";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Projects from "./components/Projects";
-import Resume from "./components/Resume";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Skills from "./components/Skills";
+import Profile from "./components/Profile";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useRef } from "react";
 
 const App = () => {
+  const sectionRefs = useRef({
+    home: null,
+    skills: null,
+    projects: null,
+    profile: null,
+  });
+
+  const handleScroll = (key) => {
+    sectionRefs.current[key]?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Projects />} />
-          <Route path="/resume" element={<Resume />} />
-        </Routes>
+        <Header handleScroll={handleScroll} />
+        <HeroSection sectionRef={(el) => (sectionRefs.current.home = el)} />
+        <Skills sectionRef={(el) => (sectionRefs.current.skills = el)} />
+        <Projects sectionRef={(el) => (sectionRefs.current.projects = el)} />
+        <Profile sectionRef={(el) => (sectionRefs.current.profile = el)} />
         <Footer />
       </Router>
     </>

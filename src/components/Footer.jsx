@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-950 text-gray-400 p-6 border-t border-gray-800">
+    <footer className="bg-neutral-950 text-neutral-400 p-6 border-t border-neutral-800">
       <div className="flex flex-wrap justify-center items-center gap-4 text-2xl mb-6">
         <Link
           to="https://www.linkedin.com/in/sonu-munda-b8806b21a/"
@@ -14,7 +14,7 @@ const Footer = () => {
         >
           <BsLinkedin />
         </Link>
-        <span className="text-gray-600">/</span>
+        <span className="text-neutral-600">/</span>
         <Link
           to="https://www.facebook.com/sonu.m.75685/"
           target="_blank"
@@ -22,7 +22,7 @@ const Footer = () => {
         >
           <FaFacebook />
         </Link>
-        <span className="text-gray-600">/</span>
+        <span className="text-neutral-600">/</span>
         <Link
           to="https://instagram.com/sonumunda_"
           target="_blank"
@@ -30,7 +30,7 @@ const Footer = () => {
         >
           <FaInstagram />
         </Link>
-        <span className="text-gray-600">/</span>
+        <span className="text-neutral-600">/</span>
         <Link
           to="MailTo: sonumunda1312@gmail.com"
           target="_blank"
@@ -38,7 +38,7 @@ const Footer = () => {
         >
           <SiGmail />
         </Link>
-        <span className="text-gray-600">/</span>
+        <span className="text-neutral-600">/</span>
         <Link
           to="https://github.com/sonumunda"
           target="_blank"
@@ -46,34 +46,6 @@ const Footer = () => {
         >
           <BsGithub />
         </Link>
-      </div>
-
-      <div className="flex flex-wrap justify-center items-center gap-4 text-sm uppercase tracking-widest">
-        <Link to="/work" className="hover:text-white transition duration-300">
-          Work
-        </Link>
-        <Link to="/about" className="hover:text-white transition duration-300">
-          About
-        </Link>
-        <Link to="/" className="hover:text-white transition duration-300">
-          Home
-        </Link>
-        <span className="font-medium text-gray-600">|</span>
-        <Link to="/resume" className="hover:text-white transition duration-300">
-          Resume
-        </Link>
-        <Link
-          to="MailTo: sonumunda1312@gmail.com"
-          className="hover:text-white transition duration-300"
-        >
-          Contact Me
-        </Link>
-      </div>
-
-      <div className="mt-6 text-center">
-        <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} Sonu Munda. Built with ❤️ by me.
-        </p>
       </div>
     </footer>
   );
