@@ -15,7 +15,7 @@ const HeroSection = ({ sectionRef }) => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             custom={0}
             className="greet-text cursive-text font-bold text-lg mb-6"
           >
@@ -26,7 +26,7 @@ const HeroSection = ({ sectionRef }) => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             custom={0.2}
             className="text-5xl lg:text-6xl font-bold mb-6"
           >
@@ -37,7 +37,7 @@ const HeroSection = ({ sectionRef }) => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             custom={0.4}
             className="text-neutral-300 text-lg mb-10"
           >
@@ -52,7 +52,7 @@ const HeroSection = ({ sectionRef }) => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             custom={0.6}
           >
             <motion.a

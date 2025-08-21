@@ -12,7 +12,7 @@ const Skills = ({ sectionRef }) => {
           initial="hidden"
           whileInView="visible"
           variants={fadeIn}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           Skills
         </motion.h2>
@@ -24,7 +24,7 @@ const Skills = ({ sectionRef }) => {
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
             >
               <div className={`icon text-4xl ${stack.color} mb-3`}>
                 <stack.icon />

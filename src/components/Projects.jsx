@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import projects from "../api/projects";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import { fadeIn, fadeUp } from "../common/animation";
+import { fadeIn } from "../common/animation";
 
 const Projects = ({ sectionRef }) => {
   return (
@@ -13,7 +13,7 @@ const Projects = ({ sectionRef }) => {
           initial="hidden"
           whileInView="visible"
           variants={fadeIn}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           Projects
         </motion.h2>
@@ -21,11 +21,11 @@ const Projects = ({ sectionRef }) => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="project-card px-4 py-6 bg-gradient-to-br from-neutral-800  to-neutral-950  border border-neutral-700 rounded-lg"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              className="project-card px-4 py-6 bg-gradient-to-br from-neutral-800 to-neutral-950 border border-neutral-700 rounded-lg"
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: index * 0.3, duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.25 }}
             >
               <div className="flex items-center gap-2 mb-3">
                 <img
@@ -51,12 +51,11 @@ const Projects = ({ sectionRef }) => {
               <div className="tech-stack mt-4 flex flex-wrap gap-4">
                 {project.techStack.map((tech, index) => (
                   <div key={index} className="tech-item flex">
-                    <tech.icon
-                      className={`text-2xl ${
-                        tech.icon ? "text-neutral-300 me-2" : ""
-                      }`}
-                    />
-                    <span className="text-neutral-300">{tech.name}</span>
+                    {/* <tech.icon
+                      className={`text-2xl ${tech.icon ? "text-neutral-300 me-2" : ""
+                        }`}
+                    /> */}
+                    <span className="text-neutral-300 bg-neutral-800 py-1 px-3 rounded-full">{tech.name}</span>
                   </div>
                 ))}
               </div>

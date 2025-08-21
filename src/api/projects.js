@@ -31,8 +31,8 @@ const projects = [
     title: "Edudocs",
     description:
       "Edudocs is a platform crafted to simplify access to educational resources. It enables students and educators to create, share, and manage notes and documents collaboratively. The platform supports multiple formats and tools to ensure a seamless learning and teaching experience. With a clean interface and advanced organizational features, Edudocs enhances productivity in educational environments.",
-    logo: "https://github.com/SonuMunda/edudocs/blob/main/src/assets/images/logo.png?raw=true",
-    whiteBg: true,
+    logo: "https://edudocs.netlify.app/images/logo.png",
+    whiteBg: false,
     linkTitle: "Live here",
     link: "https://edudocs.netlify.app/",
     icon: CiStreamOn,
@@ -49,7 +49,7 @@ const projects = [
     title: "NashtoClub",
     description:
       "NashtoClub is a restaurant website designed to showcase food menus, services, and dining experiences. The platform features an intuitive user interface, visually stunning layouts, and responsive designs to attract customers. Built with React and CSS, it ensures smooth navigation and an engaging experience for visitors, promoting the brand’s identity effectively.",
-    logo: "https://nashtoclub.netlify.app/assets/favicon-d27323cb.png",
+    logo: "https://nashtoclub.netlify.app/assets/favicon-aVzWw17H.png",
     linkTitle: "Live here",
     link: "https://nashtoclub.netlify.app/",
     icon: CiStreamOn,

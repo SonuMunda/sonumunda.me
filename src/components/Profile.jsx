@@ -16,7 +16,7 @@ const Profile = ({ sectionRef }) => {
           initial="hidden"
           whileInView="visible"
           variants={fadeIn}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           Profile
         </motion.h2>
@@ -27,7 +27,7 @@ const Profile = ({ sectionRef }) => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             Experience
           </motion.h2>
@@ -39,7 +39,7 @@ const Profile = ({ sectionRef }) => {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
               >
                 <h3 className="text-xl text-neutral-100"> - {exp.title}</h3>
                 <p className="text-neutral-300">{exp.duration}</p>
@@ -55,7 +55,7 @@ const Profile = ({ sectionRef }) => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             Education
           </motion.h2>
@@ -67,7 +67,7 @@ const Profile = ({ sectionRef }) => {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
               >
                 <div>
                   <div className="flex items-center gap-4 mb-4">
